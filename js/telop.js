@@ -9,9 +9,9 @@ const stopTime = 400;
 const startX = document.body.scrollWidth;
 
 const setMessageTxt = () => {
+    let speed = 10;
+    let currentX = startX - count * speed;
     const trg = 'target="_blank"';
-    var speed = 10;
-    var currentX = startX - count * speed;
 
     if (currentX < stopX){
         currentX = stopX;
