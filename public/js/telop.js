@@ -2,11 +2,24 @@ let count = 0;
 let i = 0;
 let time;
 let list = new Array();
-list = ['Hello', 'foooo', 'barrrrrrrr']; 
 
 const stopX = 10;
 const stopTime = 400;
 const startX = document.body.scrollWidth;
+
+const getJSON = () => {
+    let res;
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = () => {
+        if (req.readyState == 4 && req.status == 200){
+            const data = JSON.parse(req.responseText);
+            res = data;
+        }
+    }
+    req.open("GET", "../data/data.json", false);
+    req.send(null);
+    return res;
+}
 
 const setMessageTxt = () => {
     let speed = 10;
@@ -45,5 +58,9 @@ const setTimer = () => {
 }
 
 window.onload = () => {
+    const res = getJSON();
+    res.forEach((ele, index) => {
+        list.push(ele.txt);
+    });
     setMessageLine();
 }
