@@ -1,0 +1,10 @@
+.msgLine{
+  position: absolute;
+  font-size: 30px;
+  padding: 5px 0px 0px 10px;
+  color: navy;
+  background-color: #eeeeee;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+}
