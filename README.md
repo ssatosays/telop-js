@@ -1,4 +1,4 @@
-# telop
+# telop-js
 This repo is practice for telop.
 
 ### 3485be1
